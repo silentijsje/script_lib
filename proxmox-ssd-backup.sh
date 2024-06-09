@@ -19,7 +19,7 @@ DEST_DIR="/mnt/pve/backup/proxmox/ssd/"
 RSYNC_OPTIONS="-avhzqL --delete"
 
 #Frist download the script
-curl -O https://raw.githubusercontent.com/silentijsje/script_lib/main/proxmox-ssd-backup.sh
+curl -O $GITHUB_FILE_URL
 
 #Making the script excecuteble
 chmod +x /root/backup/proxmox-ssd-backup.sh
