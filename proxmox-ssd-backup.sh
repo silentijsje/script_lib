@@ -18,6 +18,9 @@ DEST_DIR="/mnt/pve/backup/proxmox/ssd/"
 # --delete : delete files in the destination that are not in the source
 RSYNC_OPTIONS="-avhzqL --delete"
 
+#Frist download the script
+curl -O https://raw.githubusercontent.com/silentijsje/script_lib/main/proxmox-ssd-backup.sh
+
 #Making the script excecuteble
 chmod +x /root/backup/proxmox-ssd-backup.sh
 
