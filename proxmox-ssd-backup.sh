@@ -16,23 +16,7 @@ DEST_DIR="/mnt/pve/backup/proxmox/ssd/"
 # -h : human-readable output
 # -z : compress files during transfer
 # --delete : delete files in the destination that are not in the source
-RSYNC_OPTIONS="-avhz --delete"
-
-# Function to print usage
-usage() {
-    echo "Usage: $0 [source_directory] [destination_directory]"
-    echo "If no directories are provided, defaults will be used."
-}
-
-# Function to download the file from GitHub
-download_file() {
-    echo "Downloading the latest version of the file from GitHub..."
-    curl -O "$LOCAL_FILE_PATH" "$GITHUB_FILE_URL"
-    if [ $? -ne 0 ]; then
-        echo "Failed to download the file from GitHub."
-        exit 1
-    fi
-}
+RSYNC_OPTIONS="-avhzqL --delete"
 
 #Making the script excecuteble
 chmod +x /root/backup/proxmox-ssd-backup.sh
