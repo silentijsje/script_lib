@@ -33,6 +33,8 @@ elif [ "$#" -gt 2 ]; then
     exit 1
 fi
 
+echo "Start Syncing"
+
 # Run rsync command
 rsync $RSYNC_OPTIONS "$SOURCE_DIR" "$DEST_DIR"
 
