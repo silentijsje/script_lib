@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#Source: https://raw.githubusercontent.com/silentijsje/script_lib/main/vm-template.sh
+
+curl -O https://raw.githubusercontent.com/silentijsje/script_lib/main/vm-template.sh
+
 # Prompt the user for the download URL and VM ID
 read -p "Enter the Ubuntu cloud image download URL: " IMG_URL
 read -p "Enter the VM ID: " VM_ID
