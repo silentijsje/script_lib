@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#Get new script from github asd
-curl -O https://raw.githubusercontent.com/silentijsje/homelab/main/proxmox-ssd-backup.sh?token=GHSAT0AAAAAACSD3VW7QFYGY3EB72TYWYQSZTFW2MQ
+#Get new script from github
+curl -O https://raw.githubusercontent.com/silentijsje/script_lib/main/proxmox-ssd-backup.sh
 
 #Generates the dat is needed for the future
 DATE=$(date '+%F')$
