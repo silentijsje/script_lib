@@ -27,7 +27,7 @@ usage() {
 # Function to download the file from GitHub
 download_file() {
     echo "Downloading the latest version of the file from GitHub..."
-    curl -o "$LOCAL_FILE_PATH" "$GITHUB_FILE_URL"
+    curl -O "$LOCAL_FILE_PATH" "$GITHUB_FILE_URL"
     if [ $? -ne 0 ]; then
         echo "Failed to download the file from GitHub."
         exit 1
