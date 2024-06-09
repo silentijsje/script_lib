@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Get new script from github asd
+#Get new script from github
 curl -O https://raw.githubusercontent.com/silentijsje/script_lib/main/proxmox-ssd-backup.sh
 
 #Making the script excecuteble
