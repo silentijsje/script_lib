@@ -11,3 +11,5 @@ DATE=$(date '+%F')$
 
 #Also deletes files on the target location
 rsync -avzh --delete /ssd/storage/ /mnt/pve/backup/proxmox/ssd/
+
+echo "done"
