@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Define the URL of the file in the GitHub repository
-GITHUB_FILE_URL="https://raw.githubusercontent.com/silentijsje/script_lib/main/gitCodeBak.sh"
-
-# Define the local path where the file will be saved
-LOCAL_FILE_PATH="/home/gamer0308/github/script_lib"
-
 # Define source and destination directories
 SOURCE_DIR="/home/gamer0308/github/"
 DEST_DIR="/mnt/backup/code/github"
@@ -19,7 +13,9 @@ DEST_DIR="/mnt/backup/code/github"
 RSYNC_OPTIONS="-avhzqL --delete"
 
 #Frist download the script
-curl -O $GITHUB_FILE_URL $LOCAL_FILE_PATH
+cd /home/gamer0308/github/script_lib
+
+git pull
 
 #Making the script excecuteble
 chmod +x /home/gamer0308/github/script_lib/gitCodeBak.sh
