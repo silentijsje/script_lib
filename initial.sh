@@ -1,6 +1,8 @@
 #!/bin/bash
 
-SSH_KEY_NAME=prod-code02
+# curl -fsSL https://raw.githubusercontent.com/silentijsje/script_lib/main/initial.sh | sh
+
+read -p "Enter the name for the ssh key: " SSH_KEY_NAME
 
 sudo apt update
 sudo apt install ansible
