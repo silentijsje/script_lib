@@ -6,11 +6,11 @@ Script to easily create a net template from a newer ubuntu cloud img.
 https://cloud-images.ubuntu.com/
 
 Click below to download the VM-Template script
-```cmd
-curl -O https://raw.githubusercontent.com/silentijsje/script_lib/main/vm-template.sh
+```
+curl -fsSL https://raw.githubusercontent.com/silentijsje/script_lib/main/vm-template.sh | sh
 ```
 
 Click below to download the proxmox-ssd-backup script
-```cmd
-curl -O https://raw.githubusercontent.com/silentijsje/script_lib/main/proxmox-ssd-backup.sh
+```
+curl -fsSL https://raw.githubusercontent.com/silentijsje/script_lib/main/proxmox-ssd-backup.sh | sh
 ```
