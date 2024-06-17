@@ -1,8 +1,11 @@
 #!/bin/bash
 
+# Get the hostname of the PC
+HOSTNAME=$(hostname)
+
 # Define source and destination directories
 SOURCE_DIR="/home/gamer0308/github/"
-DEST_DIR="/mnt/backup/code/github"
+DEST_DIR="/mnt/backup/code/github/$HOSTNAME"
 
 # Rsync options
 # -a : archive mode (preserves permissions, timestamps, symbolic links, etc.)
