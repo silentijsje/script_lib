@@ -8,16 +8,16 @@ LOCAL=$(git rev-parse @)
 REMOTE=$(git rev-parse "$UPSTREAM")
 BASE=$(git merge-base @ "$UPSTREAM")
 
-IF [ $LOCAL = $REMOTE ]; THEN
+if [ $LOCAL = $REMOTE ]; then
     echo "$(date --utc +%FT%TZ): Up-to-date"
-ELIF [ $LOCAL = $BASE ]; THEN
+elif [ $LOCAL = $BASE ]; then
     BUILD_VERSION=$(git rev-list HEAD)
     echo "$(date --utc +%FT%TZ): Changes detected, deploying new version $BUILD_VERSION"
     ./deploy.sh
-ELIF [ $REMOTE = $BASE ]; THEN
+elif [ $REMOTE = $BASE ]; then
     echo "$(date --utc +%FT%TZ): Local changes detected, stashing..."
     git stash
     ./deploy.sh
-ELSE
+else
     echo "$(date --utc +%FT%TZ): Diverged"
-FI
+fi
