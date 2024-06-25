@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /home/gamer0308/github/homelab
+
 # Fetch the remote repository
 echo "$(date --utc +%FT%TZ): Fetching remote repository..."
 git fetch
@@ -20,12 +22,12 @@ elif [ $LOCAL = $BASE ]; then
     # If the local branch is based on the same commit as the remote branch, changes are detected
     BUILD_VERSION=$(git rev-list HEAD)
     echo "$(date --utc +%FT%TZ): Changes detected, deploying new version $BUILD_VERSION"
-    ./deploy.sh
+    /home/gamer0308/github/script_lib/deploy.sh
 elif [ $REMOTE = $BASE ]; then
     # If the remote branch is based on the same commit as the local branch, local changes are detected
     echo "$(date --utc +%FT%TZ): Local changes detected, stashing..."
     git stash
-    ./deploy.sh
+    /home/gamer0308/github/script_lib/deploy.sh
 else
     # If the local and remote branches have diverged, the repository is in a diverged state
     echo "$(date --utc +%FT%TZ): Diverged"
