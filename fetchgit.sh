@@ -12,7 +12,7 @@ for dir in "${directories[@]}"; do
     cd "$dir" || exit
 
     # Fetch the remote repository
-    echo "$(date --utc +%FT%TZ): Fetching remote repository..."
+    echo "$(TZ='Europe/Amsterdam' date +%FT%T%z): Fetching remote repository..."
     git fetch
 
     # Set the upstream branch
@@ -25,16 +25,16 @@ for dir in "${directories[@]}"; do
 
     # Check if the local and remote branches are the same
     if [ "$LOCAL" = "$REMOTE" ]; then
-        echo "$(date --utc +%FT%TZ): Up-to-date"
+        echo "$(TZ='Europe/Amsterdam' date +%FT%T%z): Up-to-date"
     elif [ "$LOCAL" = "$BASE" ]; then
         BUILD_VERSION=$(git rev-list HEAD)
-        echo "$(date --utc +%FT%TZ): Changes detected, deploying new version $BUILD_VERSION"
+        echo "$(TZ='Europe/Amsterdam' date +%FT%T%z): Changes detected, deploying new version $BUILD_VERSION"
         /home/gamer0308/github/script_lib/deploy.sh
     elif [ "$REMOTE" = "$BASE" ]; then
-        echo "$(date --utc +%FT%TZ): Local changes detected, stashing..."
+        echo "$(TZ='Europe/Amsterdam' date +%FT%T%z): Local changes detected, stashing..."
         git stash
         /home/gamer0308/github/script_lib/deploy.sh
     else
-        echo "$(date --utc +%FT%TZ): Diverged"
+        echo "$(TZ='Europe/Amsterdam' date +%FT%T%z): Diverged"
     fi
 done
