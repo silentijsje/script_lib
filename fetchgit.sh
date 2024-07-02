@@ -3,7 +3,7 @@
 # Define an array of directories
 directories=(
     # "/home/gamer0308/github/homelab"
-    "/home/gamer0308/github/homelab_pub"
+    # "/home/gamer0308/github/homelab_pub"
     "/home/gamer0308/scripts_lib"
 )
 
@@ -30,11 +30,11 @@ for dir in "${directories[@]}"; do
     elif [ "$LOCAL" = "$BASE" ]; then
         BUILD_VERSION=$(git rev-list HEAD)
         echo "$(TZ='Europe/Amsterdam' date +%FT%T%z): Changes detected, deploying new version $BUILD_VERSION"
-        /home/gamer0308/github/script_lib/deploy.sh
+        # /home/gamer0308/github/script_lib/deploy.sh
     elif [ "$REMOTE" = "$BASE" ]; then
         echo "$(TZ='Europe/Amsterdam' date +%FT%T%z): Local changes detected, stashing..."
         git stash
-        /home/gamer0308/github/script_lib/deploy.sh
+        # /home/gamer0308/github/script_lib/deploy.sh
     else
         echo "$(TZ='Europe/Amsterdam' date +%FT%T%z): Diverged"
     fi
