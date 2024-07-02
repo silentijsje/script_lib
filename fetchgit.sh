@@ -2,7 +2,8 @@
 
 # Define an array of directories
 directories=(
-    "/home/gamer0308/github/homelab"
+    # "/home/gamer0308/github/homelab"
+    "/home/gamer0308/github/homelab_pub"
     "/home/gamer0308/scripts_lib"
 )
 
