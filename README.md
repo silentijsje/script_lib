@@ -15,4 +15,4 @@ Click below to download the proxmox-ssd-backup script
 curl -fsSL https://raw.githubusercontent.com/silentijsje/script_lib/main/proxmox-ssd-backup.sh | sh
 ```
 
-ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed2219 -C prod-storage01 -q
+ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519 -C prod-storage01 -q
